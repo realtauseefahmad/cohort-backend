@@ -7,7 +7,7 @@ function App() {
 
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/api/notes')
+    axios.get('https://cohort-backend-4-iof5.onrender.com/api/notes')
       .then( res => {
         setNotes(res.data.notes)
       })
@@ -23,7 +23,7 @@ function App() {
 
     const { title, description } = e.target.elements 
 
-    axios.post('http://localhost:3000/api/notes' , {
+    axios.post('https://cohort-backend-4-iof5.onrender.com/api/notes' , {
       title: title.value,
       description: description.value
     })
@@ -36,7 +36,7 @@ function App() {
   }
 
   function handleDeleteNote(noteId){
-    axios.delete('http://localhost:3000/api/notes/'+noteId)
+    axios.delete('https://cohort-backend-4-iof5.onrender.com/api/notes/'+noteId)
     .then(res=>{
 
       fetchNotes()
